@@ -19,7 +19,7 @@
       overflow-x: hidden;
     }
 
-    /* Starfield background */
+    /* Subtle starfield background */
     body::before {
       content: '';
       position: fixed;
@@ -28,22 +28,16 @@
       width: 100%;
       height: 100%;
       background:
-        radial-gradient(2px 2px at 20% 30%, white, transparent),
-        radial-gradient(2px 2px at 60% 70%, white, transparent),
+        radial-gradient(1px 1px at 20% 30%, white, transparent),
+        radial-gradient(1px 1px at 60% 70%, white, transparent),
         radial-gradient(1px 1px at 50% 50%, white, transparent),
         radial-gradient(1px 1px at 80% 10%, white, transparent),
-        radial-gradient(2px 2px at 90% 60%, white, transparent),
+        radial-gradient(1px 1px at 90% 60%, white, transparent),
         radial-gradient(1px 1px at 33% 80%, white, transparent),
         radial-gradient(1px 1px at 15% 95%, white, transparent);
       background-size: 200% 200%;
-      animation: stars 20s linear infinite;
-      opacity: 0.5;
+      opacity: 0.3;
       z-index: -1;
-    }
-
-    @keyframes stars {
-      from { transform: translate(0, 0); }
-      to { transform: translate(-100px, -100px); }
     }
 
     .container {
@@ -52,36 +46,22 @@
       padding: 20px;
     }
 
-    /* Animated rainbow header */
+    /* Rainbow header (static gradient) */
     .header {
       text-align: center;
       padding: 30px 0;
       background: linear-gradient(90deg,
         #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
-      background-size: 400% 400%;
-      animation: rainbow 3s ease infinite;
       border: 5px solid #ffff00;
       margin-bottom: 20px;
-    }
-
-    @keyframes rainbow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
     }
 
     h1 {
       font-size: 3rem;
       color: #ffffff;
       text-shadow: 3px 3px 0px #ff00ff, -3px -3px 0px #00ffff;
-      animation: blink 1s infinite;
       font-weight: bold;
       letter-spacing: 3px;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
     }
 
     .subtitle {
@@ -89,15 +69,9 @@
       color: #ffff00;
       text-shadow: 2px 2px 0px #ff0000;
       margin-top: 10px;
-      animation: slide 2s ease-in-out infinite;
     }
 
-    @keyframes slide {
-      0%, 100% { transform: translateX(-10px); }
-      50% { transform: translateX(10px); }
-    }
-
-    /* Under construction GIF style */
+    /* Under construction banner */
     .construction {
       text-align: center;
       margin: 20px 0;
@@ -110,25 +84,13 @@
         #000000 20px
       );
       border: 3px solid #ff0000;
-      animation: flash 0.5s infinite;
-    }
-
-    @keyframes flash {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.8; }
     }
 
     .construction h2 {
       color: #ff0000;
       font-size: 2rem;
       text-shadow: 2px 2px 0px #000000;
-      animation: spin 2s linear infinite;
       display: inline-block;
-    }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
     }
 
     /* Content boxes */
@@ -155,28 +117,16 @@
       text-shadow: 1px 1px 0px #000000;
     }
 
-    /* Marquee text */
-    .marquee {
+    /* Static banner text */
+    .banner {
       background: #ff0000;
       color: #ffff00;
-      padding: 15px 0;
+      padding: 15px;
       margin: 20px 0;
       border: 3px solid #00ff00;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    .marquee span {
-      display: inline-block;
-      padding-left: 100%;
-      animation: marquee 15s linear infinite;
-      font-size: 1.5rem;
+      text-align: center;
+      font-size: 1.3rem;
       font-weight: bold;
-    }
-
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-100%); }
     }
 
     /* Retro buttons */
@@ -226,39 +176,15 @@
     .stat-number {
       font-size: 3rem;
       color: #00ff00;
-      text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
-      animation: glow 1s ease-in-out infinite alternate;
+      text-shadow: 0 0 10px #00ff00;
       display: block;
       font-weight: bold;
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; }
-      to { text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00; }
     }
 
     .stat-label {
       color: #ffffff;
       font-size: 1rem;
       text-transform: uppercase;
-    }
-
-    /* Animated GIF replacement */
-    .flame-text {
-      background: linear-gradient(to top, #ff0000, #ffff00);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-size: 2.5rem;
-      font-weight: bold;
-      animation: flames 0.5s infinite;
-      text-align: center;
-      margin: 20px 0;
-    }
-
-    @keyframes flames {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
     }
 
     /* Hit counter style */
@@ -309,7 +235,7 @@
       text-decoration: underline wavy;
     }
 
-    /* Best viewed badge */
+    /* Best viewed badge (static) */
     .best-viewed {
       position: fixed;
       bottom: 20px;
@@ -320,12 +246,7 @@
       border: 3px solid #ff0000;
       font-weight: bold;
       z-index: 1000;
-      animation: bounce 1s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
@@ -333,6 +254,7 @@
       .subtitle { font-size: 1.2rem; }
       .button { padding: 10px 20px; font-size: 1rem; }
       .stat { display: block; margin: 20px 0; }
+      .best-viewed { display: none; }
     }
   </style>
 </head>
@@ -350,8 +272,8 @@
       </p>
     </div>
 
-    <div class="marquee">
-      <span>★★★ NO UIs! NO BUTTONS! JUST DATA THAT AI CAN REASON ABOUT! ★★★ WELCOME TO THE FUTURE! ★★★ BUILDING FOR 2026-2027! ★★★</span>
+    <div class="banner">
+      ★★★ NO UIs! NO BUTTONS! JUST DATA THAT AI CAN REASON ABOUT! ★★★
     </div>
 
     <div class="counter">
@@ -372,10 +294,6 @@
         <span class="stat-number">0</span>
         <span class="stat-label">DOCKER CONTAINERS!!!</span>
       </div>
-    </div>
-
-    <div class="flame-text">
-      🔥🔥🔥 HOT PROJECT ALERT! 🔥🔥🔥
     </div>
 
     <div class="box">
@@ -417,8 +335,8 @@
       </p>
     </div>
 
-    <div class="marquee" style="background: #0000ff; color: #ffff00;">
-      <span>🌟 BUILDING IN PUBLIC! 🌟 SHIPPING WORKING V1! 🌟 ITERATING ON REAL USAGE! 🌟 JOIN THE REVOLUTION! 🌟</span>
+    <div class="banner" style="background: #0000ff;">
+      🌟 BUILDING IN PUBLIC! SHIPPING WORKING V1! ITERATING ON REAL USAGE! 🌟
     </div>
 
     <div class="footer">
