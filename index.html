@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daniel Shanklin - AI-First Systems</title>
-  <meta name="description" content="Building AI data management systems for 2026-2027. Creator of Reeves, the best task manager until AGI gets here.">
+  <title>DANIEL SHANKLIN - AI SYSTEMS BUILDER</title>
+  <meta name="description" content="Building AI data management systems for 2026-2027. Creator of Reeves.">
   <style>
     * {
       margin: 0;
@@ -13,260 +13,432 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      line-height: 1.6;
-      color: #2c3e50;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+      font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+      background: #000000;
+      color: #00ff00;
+      overflow-x: hidden;
+    }
+
+    /* Starfield background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(2px 2px at 20% 30%, white, transparent),
+        radial-gradient(2px 2px at 60% 70%, white, transparent),
+        radial-gradient(1px 1px at 50% 50%, white, transparent),
+        radial-gradient(1px 1px at 80% 10%, white, transparent),
+        radial-gradient(2px 2px at 90% 60%, white, transparent),
+        radial-gradient(1px 1px at 33% 80%, white, transparent),
+        radial-gradient(1px 1px at 15% 95%, white, transparent);
+      background-size: 200% 200%;
+      animation: stars 20s linear infinite;
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    @keyframes stars {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-100px, -100px); }
     }
 
     .container {
-      max-width: 800px;
-      background: white;
-      border-radius: 20px;
-      padding: 60px 40px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Animated rainbow header */
+    .header {
       text-align: center;
+      padding: 30px 0;
+      background: linear-gradient(90deg,
+        #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+      background-size: 400% 400%;
+      animation: rainbow 3s ease infinite;
+      border: 5px solid #ffff00;
+      margin-bottom: 20px;
+    }
+
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     h1 {
       font-size: 3rem;
-      margin-bottom: 0.5rem;
-      color: #2c3e50;
-      font-weight: 800;
+      color: #ffffff;
+      text-shadow: 3px 3px 0px #ff00ff, -3px -3px 0px #00ffff;
+      animation: blink 1s infinite;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
     }
 
     .subtitle {
-      font-size: 1.3rem;
-      color: #7f8c8d;
-      margin-bottom: 2rem;
-      font-weight: 300;
-    }
-
-    .tagline {
       font-size: 1.5rem;
-      color: #667eea;
-      margin-bottom: 3rem;
-      font-weight: 600;
-      line-height: 1.4;
+      color: #ffff00;
+      text-shadow: 2px 2px 0px #ff0000;
+      margin-top: 10px;
+      animation: slide 2s ease-in-out infinite;
     }
 
-    .project {
-      background: #f8f9fa;
-      border-radius: 15px;
-      padding: 30px;
-      margin: 30px 0;
-      text-align: left;
-      border-left: 5px solid #667eea;
+    @keyframes slide {
+      0%, 100% { transform: translateX(-10px); }
+      50% { transform: translateX(10px); }
     }
 
-    .project h2 {
-      color: #2c3e50;
-      margin-bottom: 1rem;
+    /* Under construction GIF style */
+    .construction {
+      text-align: center;
+      margin: 20px 0;
+      padding: 20px;
+      background: repeating-linear-gradient(
+        45deg,
+        #ffff00,
+        #ffff00 10px,
+        #000000 10px,
+        #000000 20px
+      );
+      border: 3px solid #ff0000;
+      animation: flash 0.5s infinite;
+    }
+
+    @keyframes flash {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+
+    .construction h2 {
+      color: #ff0000;
       font-size: 2rem;
-    }
-
-    .project p {
-      color: #555;
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-    }
-
-    .project-meta {
-      color: #7f8c8d;
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .cta {
+      text-shadow: 2px 2px 0px #000000;
+      animation: spin 2s linear infinite;
       display: inline-block;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 15px 40px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Content boxes */
+    .box {
+      background: linear-gradient(135deg, #ff00ff, #00ffff);
+      border: 5px ridge #ffff00;
+      margin: 20px 0;
+      padding: 20px;
+      box-shadow: 10px 10px 0px rgba(255, 0, 255, 0.5);
+    }
+
+    .box h2 {
+      color: #ffff00;
+      font-size: 2rem;
+      text-decoration: underline;
+      text-shadow: 3px 3px 0px #000000;
+      margin-bottom: 15px;
+    }
+
+    .box p {
+      color: #ffffff;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      text-shadow: 1px 1px 0px #000000;
+    }
+
+    /* Marquee text */
+    .marquee {
+      background: #ff0000;
+      color: #ffff00;
+      padding: 15px 0;
+      margin: 20px 0;
+      border: 3px solid #00ff00;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .marquee span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 15s linear infinite;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+
+    /* Retro buttons */
+    .button {
+      display: inline-block;
+      background: linear-gradient(to bottom, #ff00ff, #8800ff);
+      color: #ffff00;
+      padding: 15px 30px;
       margin: 10px;
+      border: 4px outset #ffff00;
+      font-size: 1.3rem;
+      text-decoration: none;
+      font-weight: bold;
+      text-shadow: 2px 2px 0px #000000;
+      cursor: pointer;
+      transition: all 0.1s;
+      box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
     }
 
-    .cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    .button:hover {
+      background: linear-gradient(to bottom, #ffff00, #ff8800);
+      color: #000000;
+      transform: translate(2px, 2px);
+      box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);
     }
 
-    .cta-secondary {
-      background: white;
-      color: #667eea;
-      border: 2px solid #667eea;
+    .button:active {
+      border-style: inset;
+      transform: translate(5px, 5px);
+      box-shadow: none;
     }
 
-    .cta-secondary:hover {
-      background: #f8f9fa;
-      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
-    }
-
+    /* Stats counter */
     .stats {
-      display: flex;
-      justify-content: space-around;
-      margin: 40px 0;
-      flex-wrap: wrap;
+      background: #000080;
+      border: 5px double #00ffff;
+      padding: 20px;
+      margin: 20px 0;
+      text-align: center;
     }
 
     .stat {
-      text-align: center;
-      margin: 10px;
+      display: inline-block;
+      margin: 0 30px;
     }
 
     .stat-number {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #667eea;
+      font-size: 3rem;
+      color: #00ff00;
+      text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+      animation: glow 1s ease-in-out infinite alternate;
       display: block;
+      font-weight: bold;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; }
+      to { text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00; }
     }
 
     .stat-label {
-      color: #7f8c8d;
-      font-size: 0.9rem;
+      color: #ffffff;
+      font-size: 1rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
     }
 
-    .philosophy {
-      background: #fff9e6;
-      border-left: 5px solid #ffd93d;
-      padding: 25px;
-      margin: 30px 0;
-      border-radius: 10px;
-      text-align: left;
+    /* Animated GIF replacement */
+    .flame-text {
+      background: linear-gradient(to top, #ff0000, #ffff00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 2.5rem;
+      font-weight: bold;
+      animation: flames 0.5s infinite;
+      text-align: center;
+      margin: 20px 0;
     }
 
-    .philosophy h3 {
-      color: #2c3e50;
-      margin-bottom: 1rem;
+    @keyframes flames {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
 
-    .philosophy p {
-      color: #555;
-      font-style: italic;
-      line-height: 1.8;
+    /* Hit counter style */
+    .counter {
+      background: #000000;
+      border: 3px solid #00ff00;
+      padding: 10px;
+      text-align: center;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
     }
 
-    footer {
-      margin-top: 40px;
-      padding-top: 30px;
-      border-top: 1px solid #ecf0f1;
-      color: #7f8c8d;
-      font-size: 0.9rem;
+    .counter-label {
+      color: #00ff00;
+      font-size: 1rem;
     }
 
-    .social-links {
-      margin-top: 20px;
+    .counter-digits {
+      color: #ff0000;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 5px;
     }
 
-    .social-links a {
-      color: #667eea;
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 30px;
+      background: #00008b;
+      border: 5px groove #ffff00;
+      margin-top: 30px;
+    }
+
+    .footer p {
+      color: #00ffff;
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+
+    .footer a {
+      color: #ffff00;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-      transition: color 0.2s;
+      font-weight: bold;
     }
 
-    .social-links a:hover {
-      color: #764ba2;
+    .footer a:hover {
+      color: #ff00ff;
+      text-decoration: underline wavy;
+    }
+
+    /* Best viewed badge */
+    .best-viewed {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ffff00;
+      color: #000000;
+      padding: 10px;
+      border: 3px solid #ff0000;
+      font-weight: bold;
+      z-index: 1000;
+      animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      .tagline {
-        font-size: 1.2rem;
-      }
-
-      .container {
-        padding: 40px 25px;
-      }
-
-      .stats {
-        flex-direction: column;
-      }
+      h1 { font-size: 2rem; }
+      .subtitle { font-size: 1.2rem; }
+      .button { padding: 10px 20px; font-size: 1rem; }
+      .stat { display: block; margin: 20px 0; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Daniel Shanklin</h1>
-    <p class="subtitle">Builder of AI-First Systems</p>
+    <div class="header">
+      <h1>⭐ DANIEL SHANKLIN ⭐</h1>
+      <p class="subtitle">▶▶▶ AI SYSTEMS BUILDER ◀◀◀</p>
+    </div>
 
-    <p class="tagline">
-      Building AI data management systems for 2026-2027.<br>
-      No UIs. No buttons. Just data that AI can reason about.
-    </p>
+    <div class="construction">
+      <h2>🚧 🚧 🚧</h2>
+      <p style="color: #000000; font-size: 1.5rem; margin: 10px 0;">
+        <strong>BUILDING THE FUTURE OF AI DATA MANAGEMENT!</strong>
+      </p>
+    </div>
+
+    <div class="marquee">
+      <span>★★★ NO UIs! NO BUTTONS! JUST DATA THAT AI CAN REASON ABOUT! ★★★ WELCOME TO THE FUTURE! ★★★ BUILDING FOR 2026-2027! ★★★</span>
+    </div>
+
+    <div class="counter">
+      <p class="counter-label">YOU ARE VISITOR NUMBER:</p>
+      <p class="counter-digits">0 0 0 4 2 0</p>
+    </div>
 
     <div class="stats">
       <div class="stat">
         <span class="stat-number">6+</span>
-        <span class="stat-label">Hours Saved/Week</span>
+        <span class="stat-label">HOURS SAVED/WEEK!!!</span>
       </div>
       <div class="stat">
         <span class="stat-number">300+</span>
-        <span class="stat-label">Tasks Managed</span>
+        <span class="stat-label">TASKS MANAGED!!!</span>
       </div>
       <div class="stat">
         <span class="stat-number">0</span>
-        <span class="stat-label">Docker Containers</span>
+        <span class="stat-label">DOCKER CONTAINERS!!!</span>
       </div>
     </div>
 
-    <div class="project">
-      <h2>🤖 Reeves</h2>
-      <p class="project-meta">The Best Task Manager Until AGI Gets Here</p>
+    <div class="flame-text">
+      🔥🔥🔥 HOT PROJECT ALERT! 🔥🔥🔥
+    </div>
+
+    <div class="box">
+      <h2>🤖 REEVES - THE ULTIMATE TASK MANAGER! 🤖</h2>
       <p>
-        AI-powered personal assistant that manages your entire life. Track family events,
-        coordinate contractors, remember to follow up with friends, manage your side business—all
-        while never forgetting a detail.
+        <strong>⚡ THE BEST TASK MANAGER UNTIL AGI GETS HERE! ⚡</strong>
       </p>
-      <p>
-        <strong>Intentionally not software.</strong> Reeves is a data structure that AI can reason about.
-        Plain JSON files, no Docker, no migrations, no complexity. Built for the future when AI manages
-        your life directly through data.
+      <p style="margin-top: 15px;">
+        Manage your ENTIRE LIFE with AI! Track family events, coordinate contractors,
+        remember to follow up with friends, manage your side business—ALL while NEVER
+        forgetting a detail!!!
       </p>
-      <p>
-        <strong>For power users only.</strong> If you tinker with MCP servers and Claude Code, Reeves
-        gives you a headstart on building your own life management system.
+      <p style="margin-top: 15px;">
+        <strong>🎯 INTENTIONALLY NOT SOFTWARE! 🎯</strong> This is a DATA STRUCTURE that
+        AI can reason about! Plain JSON files, NO Docker, NO migrations, NO complexity!!!
+        Built for the FUTURE when AI manages your life directly through data!!!
       </p>
-      <div style="margin-top: 20px;">
-        <a href="https://dshanklin-bv.github.io/reeves/" class="cta">📖 Read the Docs</a>
-        <a href="https://github.com/dshanklin-bv/reeves" class="cta cta-secondary">⭐ View on GitHub</a>
+      <p style="margin-top: 15px;">
+        <strong>⚠️ FOR POWER USERS ONLY! ⚠️</strong> If you tinker with MCP servers and
+        Claude Code, Reeves gives you a HEADSTART on building your own life management system!!!
+      </p>
+      <div style="text-align: center; margin-top: 20px;">
+        <a href="https://dshanklin-bv.github.io/reeves/" class="button">📖 READ THE DOCS!!!</a>
+        <a href="https://github.com/dshanklin-bv/reeves" class="button">⭐ GITHUB REPO!!!</a>
       </div>
     </div>
 
-    <div class="philosophy">
-      <h3>💭 The Philosophy</h3>
+    <div class="box" style="background: linear-gradient(135deg, #00ff00, #00ffff);">
+      <h2>💭 THE PHILOSOPHY 💭</h2>
       <p>
-        "The future is AI data management systems, not traditional software with UIs.
-        When AI gets smart enough (2026-2027), it will manage your life directly through
-        data—not through clicking buttons. Build for that future, not today's paradigm."
+        <strong>"The future is AI data management systems, not traditional software with UIs!!!"</strong>
+      </p>
+      <p style="margin-top: 15px;">
+        When AI gets smart enough (2026-2027), it will manage your life DIRECTLY through
+        data—NOT through clicking buttons!!! Build for that FUTURE, not today's paradigm!!!
+      </p>
+      <p style="margin-top: 15px;">
+        <strong>NO DOCKER! NO MIGRATIONS! NO FEATURES TO MAINTAIN!!!</strong>
       </p>
     </div>
 
-    <footer>
-      <p>Building in public. Shipping working v1, iterating on real usage.</p>
-      <div class="social-links">
-        <a href="https://github.com/dshanklin-bv">GitHub</a>
-        <a href="https://github.com/dshanklin-bv/reeves">Reeves Project</a>
-      </div>
-      <p style="margin-top: 20px; font-size: 0.85rem;">
-        © 2025 Daniel Shanklin • Built with Claude Code
+    <div class="marquee" style="background: #0000ff; color: #ffff00;">
+      <span>🌟 BUILDING IN PUBLIC! 🌟 SHIPPING WORKING V1! 🌟 ITERATING ON REAL USAGE! 🌟 JOIN THE REVOLUTION! 🌟</span>
+    </div>
+
+    <div class="footer">
+      <p>⚡⚡⚡ <strong>BUILT WITH CLAUDE CODE!</strong> ⚡⚡⚡</p>
+      <p style="margin-top: 20px;">
+        <a href="https://github.com/dshanklin-bv">MY GITHUB</a> |
+        <a href="https://github.com/dshanklin-bv/reeves">REEVES PROJECT</a>
       </p>
-    </footer>
+      <p style="margin-top: 20px; font-size: 0.9rem;">
+        © 2025 DANIEL SHANKLIN • ALL RIGHTS RESERVED • BEST VIEWED IN NETSCAPE NAVIGATOR 3.0
+      </p>
+      <p style="font-size: 0.8rem; margin-top: 10px; color: #888888;">
+        <em>(just kidding about Netscape, any modern browser works fine 😄)</em>
+      </p>
+    </div>
+  </div>
+
+  <div class="best-viewed">
+    BEST VIEWED<br>
+    IN 1024x768
   </div>
 </body>
 </html>
