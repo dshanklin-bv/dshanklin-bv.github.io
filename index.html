@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DANIEL SHANKLIN - AI SYSTEMS BUILDER</title>
-  <meta name="description" content="Building AI data management systems for 2026-2027. Creator of Reeves.">
+  <title>Daniel Shanklin</title>
   <style>
     * {
       margin: 0;
@@ -14,349 +13,380 @@
 
     body {
       font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-      background: #000000;
-      color: #00ff00;
-      overflow-x: hidden;
-    }
-
-    /* Subtle starfield background */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background:
-        radial-gradient(1px 1px at 20% 30%, white, transparent),
-        radial-gradient(1px 1px at 60% 70%, white, transparent),
-        radial-gradient(1px 1px at 50% 50%, white, transparent),
-        radial-gradient(1px 1px at 80% 10%, white, transparent),
-        radial-gradient(1px 1px at 90% 60%, white, transparent),
-        radial-gradient(1px 1px at 33% 80%, white, transparent),
-        radial-gradient(1px 1px at 15% 95%, white, transparent);
-      background-size: 200% 200%;
-      opacity: 0.3;
-      z-index: -1;
+      background: #008080;
+      color: #000;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
 
     .container {
-      max-width: 900px;
-      margin: 0 auto;
+      max-width: 600px;
+      background: #c0c0c0;
+      border: 3px ridge #fff;
       padding: 20px;
-    }
-
-    /* Rainbow header (static gradient) */
-    .header {
-      text-align: center;
-      padding: 30px 0;
-      background: linear-gradient(90deg,
-        #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
-      border: 5px solid #ffff00;
-      margin-bottom: 20px;
     }
 
     h1 {
-      font-size: 3rem;
-      color: #ffffff;
-      text-shadow: 3px 3px 0px #ff00ff, -3px -3px 0px #00ffff;
-      font-weight: bold;
-      letter-spacing: 3px;
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #000080;
     }
 
-    .subtitle {
-      font-size: 1.5rem;
-      color: #ffff00;
-      text-shadow: 2px 2px 0px #ff0000;
-      margin-top: 10px;
-    }
-
-    /* Under construction banner */
-    .construction {
+    .links {
       text-align: center;
       margin: 20px 0;
-      padding: 20px;
-      background: repeating-linear-gradient(
-        45deg,
-        #ffff00,
-        #ffff00 10px,
-        #000000 10px,
-        #000000 20px
-      );
-      border: 3px solid #ff0000;
     }
 
-    .construction h2 {
-      color: #ff0000;
-      font-size: 2rem;
-      text-shadow: 2px 2px 0px #000000;
+    .links a {
       display: inline-block;
-    }
-
-    /* Content boxes */
-    .box {
-      background: linear-gradient(135deg, #ff00ff, #00ffff);
-      border: 5px ridge #ffff00;
-      margin: 20px 0;
-      padding: 20px;
-      box-shadow: 10px 10px 0px rgba(255, 0, 255, 0.5);
-    }
-
-    .box h2 {
-      color: #ffff00;
-      font-size: 2rem;
-      text-decoration: underline;
-      text-shadow: 3px 3px 0px #000000;
-      margin-bottom: 15px;
-    }
-
-    .box p {
-      color: #ffffff;
-      font-size: 1.2rem;
-      line-height: 1.8;
-      text-shadow: 1px 1px 0px #000000;
-    }
-
-    /* Static banner text */
-    .banner {
-      background: #ff0000;
-      color: #ffff00;
-      padding: 15px;
-      margin: 20px 0;
-      border: 3px solid #00ff00;
-      text-align: center;
-      font-size: 1.3rem;
-      font-weight: bold;
-    }
-
-    /* Retro buttons */
-    .button {
-      display: inline-block;
-      background: linear-gradient(to bottom, #ff00ff, #8800ff);
-      color: #ffff00;
-      padding: 15px 30px;
-      margin: 10px;
-      border: 4px outset #ffff00;
-      font-size: 1.3rem;
+      background: #c0c0c0;
+      border: 2px outset #fff;
+      padding: 8px 16px;
+      margin: 5px;
       text-decoration: none;
+      color: #000;
       font-weight: bold;
-      text-shadow: 2px 2px 0px #000000;
-      cursor: pointer;
-      transition: all 0.1s;
-      box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
     }
 
-    .button:hover {
-      background: linear-gradient(to bottom, #ffff00, #ff8800);
-      color: #000000;
-      transform: translate(2px, 2px);
-      box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);
-    }
-
-    .button:active {
+    .links a:active {
       border-style: inset;
-      transform: translate(5px, 5px);
-      box-shadow: none;
     }
 
-    /* Stats counter */
-    .stats {
-      background: #000080;
-      border: 5px double #00ffff;
-      padding: 20px;
-      margin: 20px 0;
+    /* Minesweeper Game */
+    #minesweeper {
+      margin: 30px auto;
       text-align: center;
     }
 
-    .stat {
-      display: inline-block;
-      margin: 0 30px;
-    }
-
-    .stat-number {
-      font-size: 3rem;
-      color: #00ff00;
-      text-shadow: 0 0 10px #00ff00;
-      display: block;
-      font-weight: bold;
-    }
-
-    .stat-label {
-      color: #ffffff;
-      font-size: 1rem;
-      text-transform: uppercase;
-    }
-
-    /* Hit counter style */
-    .counter {
-      background: #000000;
-      border: 3px solid #00ff00;
+    .game-header {
+      background: #c0c0c0;
+      border: 3px ridge #fff;
       padding: 10px;
-      text-align: center;
-      margin: 20px 0;
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .counter {
+      background: #000;
+      color: #f00;
       font-family: 'Courier New', monospace;
-    }
-
-    .counter-label {
-      color: #00ff00;
-      font-size: 1rem;
-    }
-
-    .counter-digits {
-      color: #ff0000;
-      font-size: 2rem;
+      font-size: 24px;
       font-weight: bold;
-      letter-spacing: 5px;
+      padding: 5px 10px;
+      border: 2px inset #808080;
     }
 
-    /* Footer */
+    #reset-btn {
+      background: #c0c0c0;
+      border: 3px outset #fff;
+      padding: 5px 15px;
+      font-size: 24px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    #reset-btn:active {
+      border-style: inset;
+    }
+
+    #game-board {
+      display: inline-grid;
+      gap: 0;
+      background: #c0c0c0;
+      border: 3px ridge #fff;
+      padding: 10px;
+    }
+
+    .cell {
+      width: 30px;
+      height: 30px;
+      background: #c0c0c0;
+      border: 3px outset #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .cell:active {
+      border-style: inset;
+    }
+
+    .cell.revealed {
+      background: #bfbfbf;
+      border: 1px solid #808080;
+    }
+
+    .cell.flagged::after {
+      content: '🚩';
+    }
+
+    .cell.mine {
+      background: #f00;
+    }
+
+    .cell.mine::after {
+      content: '💣';
+    }
+
+    .num-1 { color: #0000ff; }
+    .num-2 { color: #008000; }
+    .num-3 { color: #ff0000; }
+    .num-4 { color: #000080; }
+    .num-5 { color: #800000; }
+    .num-6 { color: #008080; }
+    .num-7 { color: #000000; }
+    .num-8 { color: #808080; }
+
     .footer {
       text-align: center;
-      padding: 30px;
-      background: #00008b;
-      border: 5px groove #ffff00;
       margin-top: 30px;
-    }
-
-    .footer p {
-      color: #00ffff;
-      font-size: 1.2rem;
-      margin: 10px 0;
-    }
-
-    .footer a {
-      color: #ffff00;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .footer a:hover {
-      color: #ff00ff;
-      text-decoration: underline wavy;
-    }
-
-    /* Best viewed badge (static) */
-    .best-viewed {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #ffff00;
-      color: #000000;
-      padding: 10px;
-      border: 3px solid #ff0000;
-      font-weight: bold;
-      z-index: 1000;
       font-size: 0.9rem;
+      color: #000080;
     }
 
-    @media (max-width: 768px) {
-      h1 { font-size: 2rem; }
-      .subtitle { font-size: 1.2rem; }
-      .button { padding: 10px 20px; font-size: 1rem; }
-      .stat { display: block; margin: 20px 0; }
-      .best-viewed { display: none; }
+    @media (max-width: 600px) {
+      .cell {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+      }
+      .counter {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="header">
-      <h1>⭐ DANIEL SHANKLIN ⭐</h1>
-      <p class="subtitle">▶▶▶ AI SYSTEMS BUILDER ◀◀◀</p>
+    <h1>Daniel Shanklin</h1>
+
+    <div class="links">
+      <a href="https://dshanklin-bv.github.io/reeves/">Reeves Docs</a>
+      <a href="https://github.com/dshanklin-bv">GitHub</a>
     </div>
 
-    <div class="construction">
-      <h2>🚧 🚧 🚧</h2>
-      <p style="color: #000000; font-size: 1.5rem; margin: 10px 0;">
-        <strong>BUILDING THE FUTURE OF AI DATA MANAGEMENT!</strong>
-      </p>
-    </div>
-
-    <div class="banner">
-      ★★★ NO UIs! NO BUTTONS! JUST DATA THAT AI CAN REASON ABOUT! ★★★
-    </div>
-
-    <div class="counter">
-      <p class="counter-label">YOU ARE VISITOR NUMBER:</p>
-      <p class="counter-digits">0 0 0 4 2 0</p>
-    </div>
-
-    <div class="stats">
-      <div class="stat">
-        <span class="stat-number">6+</span>
-        <span class="stat-label">HOURS SAVED/WEEK!!!</span>
+    <div id="minesweeper">
+      <div class="game-header">
+        <div class="counter" id="mine-count">010</div>
+        <button id="reset-btn">🙂</button>
+        <div class="counter" id="timer">000</div>
       </div>
-      <div class="stat">
-        <span class="stat-number">300+</span>
-        <span class="stat-label">TASKS MANAGED!!!</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">0</span>
-        <span class="stat-label">DOCKER CONTAINERS!!!</span>
-      </div>
-    </div>
-
-    <div class="box">
-      <h2>🤖 REEVES - THE ULTIMATE TASK MANAGER! 🤖</h2>
-      <p>
-        <strong>⚡ THE BEST TASK MANAGER UNTIL AGI GETS HERE! ⚡</strong>
-      </p>
-      <p style="margin-top: 15px;">
-        Manage your ENTIRE LIFE with AI! Track family events, coordinate contractors,
-        remember to follow up with friends, manage your side business—ALL while NEVER
-        forgetting a detail!!!
-      </p>
-      <p style="margin-top: 15px;">
-        <strong>🎯 INTENTIONALLY NOT SOFTWARE! 🎯</strong> This is a DATA STRUCTURE that
-        AI can reason about! Plain JSON files, NO Docker, NO migrations, NO complexity!!!
-        Built for the FUTURE when AI manages your life directly through data!!!
-      </p>
-      <p style="margin-top: 15px;">
-        <strong>⚠️ FOR POWER USERS ONLY! ⚠️</strong> If you tinker with MCP servers and
-        Claude Code, Reeves gives you a HEADSTART on building your own life management system!!!
-      </p>
-      <div style="text-align: center; margin-top: 20px;">
-        <a href="https://dshanklin-bv.github.io/reeves/" class="button">📖 READ THE DOCS!!!</a>
-        <a href="https://github.com/dshanklin-bv/reeves" class="button">⭐ GITHUB REPO!!!</a>
-      </div>
-    </div>
-
-    <div class="box" style="background: linear-gradient(135deg, #00ff00, #00ffff);">
-      <h2>💭 THE PHILOSOPHY 💭</h2>
-      <p>
-        <strong>"The future is AI data management systems, not traditional software with UIs!!!"</strong>
-      </p>
-      <p style="margin-top: 15px;">
-        When AI gets smart enough (2026-2027), it will manage your life DIRECTLY through
-        data—NOT through clicking buttons!!! Build for that FUTURE, not today's paradigm!!!
-      </p>
-      <p style="margin-top: 15px;">
-        <strong>NO DOCKER! NO MIGRATIONS! NO FEATURES TO MAINTAIN!!!</strong>
-      </p>
-    </div>
-
-    <div class="banner" style="background: #0000ff;">
-      🌟 BUILDING IN PUBLIC! SHIPPING WORKING V1! ITERATING ON REAL USAGE! 🌟
+      <div id="game-board"></div>
     </div>
 
     <div class="footer">
-      <p>⚡⚡⚡ <strong>BUILT WITH CLAUDE CODE!</strong> ⚡⚡⚡</p>
-      <p style="margin-top: 20px;">
-        <a href="https://github.com/dshanklin-bv">MY GITHUB</a> |
-        <a href="https://github.com/dshanklin-bv/reeves">REEVES PROJECT</a>
-      </p>
-      <p style="margin-top: 20px; font-size: 0.9rem;">
-        © 2025 DANIEL SHANKLIN • ALL RIGHTS RESERVED • BEST VIEWED IN NETSCAPE NAVIGATOR 3.0
-      </p>
-      <p style="font-size: 0.8rem; margin-top: 10px; color: #888888;">
-        <em>(just kidding about Netscape, any modern browser works fine 😄)</em>
-      </p>
+      Building AI data management systems<br>
+      Best viewed in Netscape Navigator 3.0
     </div>
   </div>
 
-  <div class="best-viewed">
-    BEST VIEWED<br>
-    IN 1024x768
-  </div>
+  <script>
+    // Minesweeper Game
+    const ROWS = 9;
+    const COLS = 9;
+    const MINES = 10;
+
+    let board = [];
+    let revealed = [];
+    let flagged = [];
+    let gameOver = false;
+    let firstClick = true;
+    let timerInterval = null;
+    let seconds = 0;
+
+    const gameBoard = document.getElementById('game-board');
+    const mineCount = document.getElementById('mine-count');
+    const timerDisplay = document.getElementById('timer');
+    const resetBtn = document.getElementById('reset-btn');
+
+    gameBoard.style.gridTemplateColumns = `repeat(${COLS}, 30px)`;
+
+    function initBoard() {
+      board = Array(ROWS).fill(null).map(() => Array(COLS).fill(0));
+      revealed = Array(ROWS).fill(null).map(() => Array(COLS).fill(false));
+      flagged = Array(ROWS).fill(null).map(() => Array(COLS).fill(false));
+      gameOver = false;
+      firstClick = true;
+      seconds = 0;
+      timerDisplay.textContent = '000';
+      mineCount.textContent = String(MINES).padStart(3, '0');
+      resetBtn.textContent = '🙂';
+      if (timerInterval) clearInterval(timerInterval);
+      renderBoard();
+    }
+
+    function placeMines(avoidRow, avoidCol) {
+      let minesPlaced = 0;
+      while (minesPlaced < MINES) {
+        const row = Math.floor(Math.random() * ROWS);
+        const col = Math.floor(Math.random() * COLS);
+        if (board[row][col] !== -1 && !(row === avoidRow && col === avoidCol)) {
+          board[row][col] = -1;
+          minesPlaced++;
+        }
+      }
+      calculateNumbers();
+    }
+
+    function calculateNumbers() {
+      for (let r = 0; r < ROWS; r++) {
+        for (let c = 0; c < COLS; c++) {
+          if (board[r][c] === -1) continue;
+          let count = 0;
+          for (let dr = -1; dr <= 1; dr++) {
+            for (let dc = -1; dc <= 1; dc++) {
+              const nr = r + dr;
+              const nc = c + dc;
+              if (nr >= 0 && nr < ROWS && nc >= 0 && nc < COLS && board[nr][nc] === -1) {
+                count++;
+              }
+            }
+          }
+          board[r][c] = count;
+        }
+      }
+    }
+
+    function renderBoard() {
+      gameBoard.innerHTML = '';
+      for (let r = 0; r < ROWS; r++) {
+        for (let c = 0; c < COLS; c++) {
+          const cell = document.createElement('div');
+          cell.className = 'cell';
+          cell.dataset.row = r;
+          cell.dataset.col = c;
+
+          if (revealed[r][c]) {
+            cell.classList.add('revealed');
+            if (board[r][c] === -1) {
+              cell.classList.add('mine');
+            } else if (board[r][c] > 0) {
+              cell.textContent = board[r][c];
+              cell.classList.add(`num-${board[r][c]}`);
+            }
+          } else if (flagged[r][c]) {
+            cell.classList.add('flagged');
+          }
+
+          cell.addEventListener('click', () => handleClick(r, c));
+          cell.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            handleRightClick(r, c);
+          });
+
+          gameBoard.appendChild(cell);
+        }
+      }
+    }
+
+    function handleClick(row, col) {
+      if (gameOver || revealed[row][col] || flagged[row][col]) return;
+
+      if (firstClick) {
+        placeMines(row, col);
+        firstClick = false;
+        startTimer();
+      }
+
+      if (board[row][col] === -1) {
+        revealAllMines();
+        gameOver = true;
+        resetBtn.textContent = '😵';
+        stopTimer();
+        return;
+      }
+
+      revealCell(row, col);
+
+      if (checkWin()) {
+        gameOver = true;
+        resetBtn.textContent = '😎';
+        stopTimer();
+        revealAllMines();
+      }
+    }
+
+    function handleRightClick(row, col) {
+      if (gameOver || revealed[row][col]) return;
+
+      flagged[row][col] = !flagged[row][col];
+      updateMineCount();
+      renderBoard();
+    }
+
+    function revealCell(row, col) {
+      if (row < 0 || row >= ROWS || col < 0 || col >= COLS) return;
+      if (revealed[row][col] || flagged[row][col]) return;
+
+      revealed[row][col] = true;
+
+      if (board[row][col] === 0) {
+        for (let dr = -1; dr <= 1; dr++) {
+          for (let dc = -1; dc <= 1; dc++) {
+            revealCell(row + dr, col + dc);
+          }
+        }
+      }
+
+      renderBoard();
+    }
+
+    function revealAllMines() {
+      for (let r = 0; r < ROWS; r++) {
+        for (let c = 0; c < COLS; c++) {
+          if (board[r][c] === -1) {
+            revealed[r][c] = true;
+          }
+        }
+      }
+      renderBoard();
+    }
+
+    function checkWin() {
+      for (let r = 0; r < ROWS; r++) {
+        for (let c = 0; c < COLS; c++) {
+          if (board[r][c] !== -1 && !revealed[r][c]) {
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+
+    function updateMineCount() {
+      const flagCount = flagged.flat().filter(f => f).length;
+      const remaining = MINES - flagCount;
+      mineCount.textContent = String(Math.max(0, remaining)).padStart(3, '0');
+    }
+
+    function startTimer() {
+      timerInterval = setInterval(() => {
+        seconds++;
+        if (seconds > 999) seconds = 999;
+        timerDisplay.textContent = String(seconds).padStart(3, '0');
+      }, 1000);
+    }
+
+    function stopTimer() {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+    }
+
+    resetBtn.addEventListener('click', initBoard);
+
+    initBoard();
+  </script>
 </body>
 </html>
